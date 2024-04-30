@@ -18,7 +18,7 @@
         var myChart = echarts.init(document.getElementById('main'));
         var option;
 
-        $.getJSON('D:\webgis\bobo-zhu.github.io\chinaecharts\population_data.json', function (data) {
+        $.getJSON('population_data.json', function (data) {
             data = data
                 .filter(function (dataItem) {
                     return dataItem[2] > 0;

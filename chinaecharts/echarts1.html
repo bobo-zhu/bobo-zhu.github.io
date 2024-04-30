@@ -8,7 +8,7 @@
 </head>
 <body>
     <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
-    <div id="main" style="width: 900px; height: 600px; margin: auto;"></div>
+    <div id="main" style="width: 1100px; height: 650px; margin: auto;"></div>
     <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
         var myChart = echarts.init(document.getElementById('main'));
@@ -20,58 +20,103 @@
                 x:'center',
             },
             tooltip: {},
-            legend: {
-                orient: 'vertical',
-                padding: [50, 0, 0, 0],
-                x:'right',
-                data: ['水电（万千瓦）', '核电（万千瓦）', '风电（万千瓦）', '太阳能（万千瓦）', '水电同比增长（%）', '核电同比增长（%）', '风电同比增长（%）', '太阳能同比增长（%）']
+            legend: [{
+                orient: 'horizontal',
+                x:'center',
+                top: '5%',
+                itemGap: 10, // 设置图例项之间的间距
+                data: ['水电（万千瓦）', '核电（万千瓦）', '风电（万千瓦）', '太阳能（万千瓦）']
             },
+                {
+                    orient: 'horizontal',
+                    x:'center',
+                    top: '9.5%',
+                    itemGap: 10, // 设置图例项之间的间距
+                    data: ['水电同比增长（%）', '核电同比增长（%）', '风电同比增长（%）', '太阳能同比增长（%）']
+                }],
             xAxis: {
                 data: ["2017", "2018", "2019", "2020", "2021", "2022", "2023"]
             },
-            yAxis: {},
+            yAxis: [
+            {
+                    type: 'value',
+                    name: '年发电量',
+                    min: 0,
+                    max: 70000,
+                    show: true,
+                    interval: 3500,
+                    axisLine: {
+                    lineStyle: {
+                        color: '#5e859e',
+                        width: 2
+                    }
+            }
+        }, {
+            type: 'value',
+                name: '同比增长率',
+                min: 0,
+                max: 100,
+                interval: 10,
+                axisLabel: {
+                formatter: '{value} %'
+            },
+            axisLine: {
+                lineStyle: {
+                    color: '#5e859e',//纵坐标轴和字体颜色
+                    width: 2
+                }
+            }
+        }],
             series: [
                 {
                     name: '水电（万千瓦）',
                     type: 'bar',
+                    yAxisIndex: 0, // 关联到左边的Y轴
                     data: [34119, 35226, 35640, 37016, 39092, 41350, 42154]
                 }, {
                     name: '核电（万千瓦）',
                     type: 'bar',
+                    yAxisIndex: 0, // 关联到左边的Y轴
                     data: [3582, 4466, 4874, 4989, 5326, 5553, 5691]
                 },
                 {
                     name: '风电（万千瓦）',
                     type: 'bar',
+                    yAxisIndex: 0, // 关联到左边的Y轴
                     data: [16367, 18426, 21005, 28153, 32848, 36544, 44134]
                 },
                 {
                     name: '太阳能（万千瓦）',
                     type: 'bar',
+                    yAxisIndex: 0, // 关联到左边的Y轴
                     data: [13025, 17463, 20468, 25343, 30656, 39261, 60949]
                 },
                 {
                     name: '水电同比增长（%）',
                     type: 'line',
                     smooth: true,
+                    yAxisIndex: 1, // 关联到左边的Y轴
                     data: [2.7, 2.5, 1.1, 3.4, 5.6, 5.8, 1.8]
                 },
                 {
                     name: '核电同比增长（%）',
                     type: 'line',
                     smooth: true,
+                    yAxisIndex: 1, // 关联到左边的Y轴
                     data: [6.5, 24.7, 9.1, 2.4, 6.8, 4.3, 2.4]
                 },
                 {
                     name: '风电同比增长（%）',
                     type: 'line',
                     smooth: true,
+                    yAxisIndex: 1, // 关联到左边的Y轴
                     data: [10.5, 12.4, 14, 34.6, 16.6, 11.2, 20.7]
                 },
                 {
                     name: '太阳能同比增长（%）',
                     type: 'line',
                     smooth: true,
+                    yAxisIndex: 1, // 关联到左边的Y轴
                     data: [68.7, 33.9, 17.4, 24.1, 20.9, 28.1, 55.2]
                 }]
         };

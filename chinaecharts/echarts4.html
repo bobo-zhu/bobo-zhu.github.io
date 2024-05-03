@@ -40,7 +40,7 @@
                 viewControl: {
                     autoRotate: false,
                     targetCoord: [104.195397, 35.86166], // 中国的经纬度
-                    distance: 100, // 离球面的初始距离
+                    distance: 200, // 离球面的初始距离
                 },
                 globe: {
                     baseTexture: 'world.topo.bathy.200401.jpg',
@@ -54,12 +54,6 @@
                     },
                     viewControl: {
                         autoRotate: false,
-                        alpha:90,
-                        beta:20,
-                        distance: 1000,
-                        rotationSensitivity: 10, // 旋转敏感度
-                        distanceSensitivity: 50, // 缩放敏感度
-                        fovSensitivity: 2, // 视角敏感度
                     }
                 },
                 visualMap: {
@@ -99,6 +93,9 @@
             myChart.setOption(option);
         })
     </script>
+</body>
+
+</html>
 </body>
 
 </html>

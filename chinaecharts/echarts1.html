@@ -1,11 +1,14 @@
 ﻿<!DOCTYPE html>
 <html>
+
 <head>
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
     <title>ECharts</title>
     <!-- 引入 echarts.js -->
     <script src="echarts.js"></script>
 </head>
+
 <body>
     <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
     <div id="main" style="width: 1100px; height: 650px; margin: auto;"></div>
@@ -17,28 +20,28 @@
         var option = {
             title: {
                 text: '2017-2023年中国主要清洁能源年发电量及增长率',
-                x:'center',
+                x: 'center',
             },
             tooltip: {},
             legend: [{
                 orient: 'horizontal',
-                x:'center',
+                x: 'center',
                 top: '5%',
                 itemGap: 10, // 设置图例项之间的间距
                 data: ['水电（万千瓦）', '核电（万千瓦）', '风电（万千瓦）', '太阳能（万千瓦）']
             },
-                {
-                    orient: 'horizontal',
-                    x:'center',
-                    top: '9.5%',
-                    itemGap: 10, // 设置图例项之间的间距
-                    data: ['水电同比增长（%）', '核电同比增长（%）', '风电同比增长（%）', '太阳能同比增长（%）']
-                }],
+            {
+                orient: 'horizontal',
+                x: 'center',
+                top: '9.5%',
+                itemGap: 10, // 设置图例项之间的间距
+                data: ['水电同比增长（%）', '核电同比增长（%）', '风电同比增长（%）', '太阳能同比增长（%）']
+            }],
             xAxis: {
                 data: ["2017", "2018", "2019", "2020", "2021", "2022", "2023"]
             },
             yAxis: [
-            {
+                {
                     type: 'value',
                     name: '年发电量',
                     min: 0,
@@ -46,27 +49,27 @@
                     show: true,
                     interval: 3500,
                     axisLine: {
-                    lineStyle: {
-                        color: '#5e859e',
-                        width: 2
+                        lineStyle: {
+                            color: '#5e859e',
+                            width: 2
+                        }
                     }
-            }
-        }, {
-            type: 'value',
-                name: '同比增长率',
-                min: 0,
-                max: 100,
-                interval: 10,
-                axisLabel: {
-                formatter: '{value} %'
-            },
-            axisLine: {
-                lineStyle: {
-                    color: '#5e859e',//纵坐标轴和字体颜色
-                    width: 2
-                }
-            }
-        }],
+                }, {
+                    type: 'value',
+                    name: '同比增长率',
+                    min: 0,
+                    max: 100,
+                    interval: 10,
+                    axisLabel: {
+                        formatter: '{value} %'
+                    },
+                    axisLine: {
+                        lineStyle: {
+                            color: '#5e859e',//纵坐标轴和字体颜色
+                            width: 2
+                        }
+                    }
+                }],
             series: [
                 {
                     name: '水电（万千瓦）',
@@ -136,7 +139,7 @@
                     itemStyle: {
                         normal: {
                             lineStyle: {
-                                color: '#ADE0FF', // 或者使用 '#c23531' 这种颜色
+                                color: '#FF8888', // 或者使用 '#c23531' 这种颜色
                                 width: 2
                             }
                         }
@@ -154,7 +157,7 @@
                     itemStyle: {
                         normal: {
                             lineStyle: {
-                                color: '#ADE0FF', // 或者使用 '#c23531' 这种颜色
+                                color: '#FFBB66', // 或者使用 '#c23531' 这种颜色
                                 width: 2
                             }
                         }
@@ -172,7 +175,7 @@
                     itemStyle: {
                         normal: {
                             lineStyle: {
-                                color: '#ADE0FF', // 或者使用 '#c23531' 这种颜色
+                                color: '#BBFF66', // 或者使用 '#c23531' 这种颜色
                                 width: 2
                             }
                         }
@@ -190,7 +193,7 @@
                     itemStyle: {
                         normal: {
                             lineStyle: {
-                                color: '#ADE0FF', // 或者使用 '#c23531' 这种颜色
+                                color: '#66FFFF', // 或者使用 '#c23531' 这种颜色
                                 width: 2
                             }
                         }
@@ -202,4 +205,5 @@
         myChart.setOption(option);
     </script>
 </body>
+
 </html>

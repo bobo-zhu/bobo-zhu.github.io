@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DailyLuShine</title>
+  <link rel="stylesheet" href="public/static/content/daily.css" />
+</head>
+
+<body>
+    <!-- 头部的盒子 -->
+    <header>
+        <h1>Daily LuShine</h1>
+    </header>
+
+    <div class="return">
+        <a href="lushine.html"><img src="public/static/fonts/返回主页.webp" alt=""></a>
+    </div>
+    <!-- 页面主体部分 -->
+    <section class="mainbox">
+        <div class="column">
+            <div class="panel bar">
+                <h2>今日气温</h2>
+                <div class="chart"></div>
+                <div class="panel-footer"></div>
+            </div>
+            <div class="panel line">
+                <h2 id="xx1">
+                    今日风向
+                </h2>
+                <div class="chart" id="xx2">图表</div>
+                <div class="panel-footer"></div>
+            </div>
+            <div class="panel pie">
+                <h2>今日空气污染构成</h2>
+                <div class="chart">图表</div>
+                <div class="panel-footer"></div>
+            </div>
+        </div>
+        <div class="column">
+            <!-- no模块制作 -->
+            <div class="no">
+                <div class="no-hd">
+                    <ul>
+                        <li>18</li>
+                        <li>231</li>
+                    </ul>
+                </div>
+                <div class="no-bd">
+                    <ul>
+                        <li>今日实习院校数</li>
+                        <li>今日实习师生数</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 地图模块 -->
+            <div class="map">
+                <div class="map1"></div>
+                <div class="map2"></div>
+                <div class="map3"></div>
+                <div class="chart"></div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="panel bar2">
+                <div class="weather-box">
+                    <div class="data">
+                        <p class="time" id="time">00:00:00</p>
+                        <p id="date"></p>
+                    </div>
+                    <div class="weather">
+                        <img id="weatherImg" src="public/static/fonts/sun.webp" alt="">
+                        <div id="weather">
+                            <p class="active">晴天</p>
+                            <p>16-22℃</p>
+                            <p>庐山</p>
+                            <p>风景区</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer"></div>
+            </div>
+            <div class="panel line2">
+                <h2>运动适宜程度</h2>
+                <div class="chart">图表</div>
+                <div class="panel-footer"></div>
+            </div>
+            <div class="panel pie2">
+                <h2>综合信息</h2>
+                <div class="chart">图表</div>
+                <div class="panel-footer"></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="mtl"></div>
+    <script src="public/static/scripts/flexible.js"></script>
+    <script src="public/static/scripts/echarts.min.js"></script>
+    <!-- 先引入jquery -->
+    <script src="public/static/scripts/jquery.js"></script>
+    <!-- 必须先引入china.js 这个文件 因为中国地图需要 -->
+    <script src="public/static/scripts/china.js"></script>
+    <script src="public/static/scripts/daily.js"></script>
+</body>
+
+</html>

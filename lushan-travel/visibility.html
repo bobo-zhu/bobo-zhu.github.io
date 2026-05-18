@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <link href="public/static/content/visiblity.css" rel="stylesheet" type="text/css" />
+    <script src="public/static/scripts/jquery.js"></script>
+    <script src="public/static/dist/leaflet/include-leaflet.js"></script>
+    <meta charset="UTF-8">
+    <title>Visiblity Forecast</title>
+</head>
+
+<body>
+    <div class="data_bodey">
+        <!-- 标头 -->
+        <div class="head_up">
+            <h1>Visibility Forecast</h1>
+        </div>
+
+
+        <!-- 内容 -->
+        <div class="index_tabs">
+            <div class="inner" style="height: 96%;">
+
+                <div class="left_cage">
+                    <!-- 显示能见度 -->
+                    <div class="dataAllBorder01 cage_cl" style=" height: 35%;">
+                        <div class="dataAllBorder02">
+                            <div class="weather-box VisibilityDisplay">
+                                <div class="middle_top">
+                                    <div class="middle_top_list">
+                                        <div class="list_title">Photo Visibility</div>
+                                        <div class="list_num list_num1">
+                                            <span class="counter-value" id="realPhotoV">
+                                                NaN
+                                            </span>m
+                                        </div>
+                                        <div class="today_list_font">Source:<span id="realPhotoS">None</span></div>
+                                    </div>
+                                    <div class="middle_top_list">
+                                        <div class="list_title">Video Visibility</div>
+                                        <div class="list_num list_num2">
+                                            <span class="counter-value" id="realVideoV">
+                                                NaN
+                                            </span>m
+                                        </div>
+                                        <div class="today_list_font">Source:<span id="realVideoS">None</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="VisibilityButton">
+                                <a id="submitPhoto">Choose Photo</a>
+                                <a id="realSubmitPhoto">Upload Photo</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 视频显示区域 -->
+                    <div class="dataAllBorder01 cage_cl" style="margin-top: 1.5% !important; height: 35%;">
+                        <div class="dataAllBorder02 video_cage">
+                            <video id="visibilityVideo" src="" autoplay="autoplay" loop="loop" muted="muted"
+                                   poster=""></video>
+                        </div>
+                    </div>
+                    <!-- 图片上传区域 -->
+                    <div class="dataAllBorder01 cage_cl"
+                         style="margin-top: 1.5% !important; height: 30%; position: relative;">
+                        <div class="dataAllBorder02" style="overflow: hidden">
+                            <form method="post" enctype="multipart/form-data" id="photoUpload">
+                                <img src="public/static/fonts/visibility.jfif" id="photoPreview">
+                                <p id="imageSubmitt">
+                                    <input type="file" id="imageSubmit" name="test"
+                                           accept="image/gif, image/jpeg, image/webp, image/jpg">
+                                </p>
+                                <input type="button" value="Upload" id="upFileBtn">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="center_cage">
+                    <div class="dataAllBorder01 cage_cl" style=" position: relative;">
+                        <div class="dataAllBorder02" style="position: relative; overflow: hidden;">
+                            <div class="map_title_box">
+                                <div class="map_title_innerbox">
+                                    <div class="map_title">监控点分布</div>
+                                </div>
+                            </div>
+                            <div class="map" id="map"></div>
+                            <ul class="btn-wrap" style="z-index: 99;">
+                                <li class="btn">点击相机获取相应位置实时监控</li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="right_cage">
+                    <div class="dataAllBorder01 cage_cl" style=" height: 24%">
+                        <div class="dataAllBorder02" id="cage_cl">
+                            <div class="weather-box">
+                                <div class="data">
+                                    <p class="time" id="time">00:00:00</p>
+                                    <p id="date"></p>
+                                </div>
+                                <div class="weather">
+                                    <img id="weatherImg" src="public/static/fonts/sun.webp" alt="">
+                                    <div id="weather">
+                                        <p class="active">晴天</p>
+                                        <p>16-22℃</p>
+                                        <p>庐山国家</p>
+                                        <p>风景名胜区</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="dataAllBorder01 cage_cl check_increase"
+                         style=" margin-top: 1.5% !important;height: 38%">
+                        <div class="dataAllBorder02 over_hide dataAllBorder20" id="over_hide">
+                            <div id="chart_1" style="height: 100%;width: 100%;"></div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="dataAllBorder01 cage_cl check_decrease"
+                         style="margin-top: 1.5% !important; height: 38%; position: relative;">
+                        <div class="dataAllBorder02 over_hide" style="padding: 1.2%;">
+                            <div class="analysis">能见度影响因素：</div>
+                            <div id="chart_2" style="height: 90%;width: 100%;"></div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="return">
+        <a href="lushine.html"><img src="public/static/fonts/返回主页.webp" alt=""></a>
+    </div>
+
+    <script type="text/javascript" src="public/static/scripts/echarts.min.js"></script>
+    <script type="text/javascript" src="public/static/scripts/visibility.js"></script>
+
+</body>
+
+</html>

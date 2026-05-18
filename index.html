@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>朱道勇 - 个人简历</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .resume-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            letter-spacing: 4px;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.8;
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 0.9rem;
+        }
+
+        .contact-info span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .contact-info i {
+            opacity: 0.6;
+        }
+
+        .section {
+            padding: 30px 40px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.3rem;
+            color: #1a1a2e;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #667eea;
+        }
+
+        .section-title i {
+            color: #667eea;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 25px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #667eea;
+            border: 2px solid white;
+            box-shadow: 0 0 0 2px #667eea;
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+        }
+
+        .timeline-title {
+            font-weight: 600;
+            color: #1a1a2e;
+        }
+
+        .timeline-company {
+            font-size: 0.9rem;
+            color: #667eea;
+            font-weight: 500;
+        }
+
+        .timeline-period {
+            font-size: 0.85rem;
+            color: #888;
+        }
+
+        .timeline-desc {
+            font-size: 0.9rem;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .timeline-desc ul {
+            margin-top: 8px;
+            padding-left: 20px;
+        }
+
+        .timeline-desc li {
+            margin-bottom: 5px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .skill-category h4 {
+            font-size: 0.95rem;
+            color: #1a1a2e;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .skill-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        .awards-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .award-tag {
+            background: #fff3cd;
+            color: #856404;
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            border: 1px solid #ffeeba;
+        }
+
+        .self-assessment {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #4caf50;
+        }
+
+        .self-assessment p {
+            color: #2e7d32;
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        .project-highlight {
+            background: #f5f3ff;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 10px;
+            border-left: 3px solid #7c4dff;
+        }
+
+        .project-highlight p {
+            color: #534bae;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .section {
+                padding: 20px;
+            }
+
+            .timeline-header {
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <!-- Header -->
+        <div class="header">
+            <h1>朱道勇</h1>
+            <p>测绘工程 · 硕士 · 武汉大学</p>
+            <div class="contact-info">
+                <span><i>📞</i> 15971939980</span>
+                <span><i>📧</i> zhudaoyong@whu.edu.cn</span>
+                <span><i>💬</i> zdy336yyds</span>
+                <span><i>🎓</i> 2027届毕业生</span>
+            </div>
+        </div>
+
+        <!-- Self Assessment -->
+        <div class="section">
+            <div class="section-title">
+                <i>💡</i> 自荐理由
+            </div>
+            <div class="self-assessment">
+                <p>具备Agent决策系统的全链路开发经验（任务拆解→工具调用→多维度评估→结果生成），熟悉大模型在出行/地理决策场景的应用落地；测绘工程专业背景赋予对公交、POI、出行路线等空间场景的深入理解；一作SCI论文证明快速学习与科研转化能力。</p>
+            </div>
+        </div>
+
+        <!-- Education -->
+        <div class="section">
+            <div class="section-title">
+                <i>🎓</i> 教育背景
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <div class="timeline-title">测绘工程（硕士）</div>
+                        <div class="timeline-company">武汉大学资环学院</div>
+                    </div>
+                    <div class="timeline-period">2025.09 - 至今</div>
+                </div>
+                <div class="timeline-desc">
+                    <ul>
+                        <li>2025年第二十届地理信息科学理论与方法学术年会（快闪报告）</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <div class="timeline-title">地理信息科学（数字地图与空间信息工程）（本科）</div>
+                        <div class="timeline-company">武汉大学资环学院</div>
+                    </div>
+                    <div class="timeline-period">2021.09 - 2025.06</div>
+                </div>
+                <div class="timeline-desc">
+                    <ul>
+                        <li>GPA：3.78/4.0</li>
+                        <li>优秀毕业生、国家励志奖学金、武汉大学"三好学生"</li>
+                        <li>心理委员（2021-2025）</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project Experience -->
+        <div class="section">
+            <div class="section-title">
+                <i>💼</i> 项目经历
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <div class="timeline-title">历史文化名城RAG系统</div>
+                        <div class="timeline-company">核心开发成员</div>
+                    </div>
+                    <div class="timeline-period">2025.04 - 至今</div>
+                </div>
+                <div class="timeline-desc">
+                    <strong>技术栈：</strong>LangChain + Qwen3-8B + Neo4j + PyTorch<br>
+                    <strong>职责：</strong>负责基于Neo4j图数据库构建历史文化知识图谱，作为长期记忆（LTM）模块；利用Qwen3-8B模型和LangChain框架搭建检索增强生成（RAG）系统，实现针对特定领域知识的问答与语义检索。
+                    <div class="project-highlight">
+                        <p><strong>业绩：</strong>完成了从数据抽取、图谱构建到LLM应用部署的全流程，深入理解Transformer解码器架构、Attention机制及大模型推理优化。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <div class="timeline-title">奶茶店优化选址智能体系统</div>
+                        <div class="timeline-company">独立开发</div>
+                    </div>
+                    <div class="timeline-period">2026.05 - 至今</div>
+                </div>
+                <div class="timeline-desc">
+                    <strong>技术栈：</strong>Trae + 高德地图MCP服务 + 自定义Agent + HTML/JS<br>
+                    <strong>职责：</strong>编写系统化提示词，定义五步闭环工作流（获取坐标→竞品分析→客群评估→交通可达性→生成报告），实现Agent自主规划与执行；配置高德地图MCP Server，封装4个核心API。
+                    <div class="project-highlight">
+                        <p><strong>业绩：</strong>系统可同时评估4个维度，覆盖半径500-1000米范围，单次评估可检索并分析50+个周边POI，提示词模板可迁移至其他餐饮品类选址评估。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <div class="timeline-title">空间智能计算工具箱开发</div>
+                        <div class="timeline-company">核心开发者 · 已获软件著作权</div>
+                    </div>
+                    <div class="timeline-period">2022.12 - 2024.06</div>
+                </div>
+                <div class="timeline-desc">
+                    <strong>职责：</strong>独立负责空间分区核心算法模块的开发。引入空间权重矩阵和层次聚类思想，基于KD-Tree优化算法时间复杂度，提升大规模数据处理效率；基于Python + QT封装为可视化工具箱。
+                    <div class="project-highlight">
+                        <p><strong>业绩：</strong>深入理解聚类算法、图结构及复杂度分析，获软件著作权。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <div class="timeline-title">WebGIS网页开发</div>
+                        <div class="timeline-company">小组队长</div>
+                    </div>
+                    <div class="timeline-period">2022.06 - 2023.09</div>
+                </div>
+                <div class="timeline-desc">
+                    <strong>技术栈：</strong>Node.js + MySQL + HTML/CSS/JS<br>
+                    <strong>职责：</strong>负责Node.js服务器搭建及前后端接口设计；参与前端页面开发。
+                    <div class="project-highlight">
+                        <p><strong>业绩：</strong>独立完成服务端开发与数据库交互，具备基本的开发和接口设计能力。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Research Achievements -->
+        <div class="section">
+            <div class="section-title">
+                <i>📝</i> 科研成果
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div class="timeline-title">期刊论文</div>
+                </div>
+                <div class="timeline-desc" style="font-size: 0.85rem;">
+                    <ul>
+                        <li><strong>一作：</strong>Daoyong Zhu, Yumin Chen, Ge Han et al. 《Estimating monthly China XCO2 based on DQ-1 data and spatiotemporal heterogeneous filtering model》（IJDE，SCI 2区）</li>
+                        <li><strong>合作：</strong>Yonghui Tan, Yumin Chen, Rui Zhu, Daoyong Zhu et al. 《SSDFNet: A State Space Guided Network for Multimodal Building Extraction and Solar Modeling》（IEEE，SCI 2区）</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div class="timeline-title">发明专利</div>
+                </div>
+                <div class="timeline-desc" style="font-size: 0.85rem;">
+                    <ul>
+                        <li>陈玉敏，朱道勇等. CO2浓度空间滤值地理加权回归建模方法及装置. CN202411556739.0（已授权）</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Internship -->
+        <div class="section">
+            <div class="section-title">
+                <i>💻</i> 实习经历
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <div class="timeline-title">3维DEM数据生产实习生</div>
+                        <div class="timeline-company">武汉珞珈新图科技有限公司</div>
+                    </div>
+                    <div class="timeline-period">2025.07 - 2025.08</div>
+                </div>
+                <div class="timeline-desc">
+                    <strong>职责：</strong>负责基于VR三维地形编辑平台进行DEM数据的可视化修订与质量检查，使用地形编辑工具对数字高程模型进行局部高程修正、地形细节优化。
+                    <div class="project-highlight">
+                        <p><strong>业绩：</strong>共完成约25平方公里地形异常值的修正，并通过项目质量验收。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <div class="timeline-title">湖北省生态环境遥感影像解译实习生</div>
+                        <div class="timeline-company">武汉大学资环学院</div>
+                    </div>
+                    <div class="timeline-period">2023.09 - 2024.06</div>
+                </div>
+                <div class="timeline-desc">
+                    <strong>职责：</strong>负责多县域的遥感影像目视解译与变化检测（耕地→工业用地），使用ArcGIS更新数据库。
+                    <div class="project-highlight">
+                        <p><strong>业绩：</strong>完成百余地块的精准判别与入库，锻炼了对复杂空间/属性数据的处理能力。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills & Honors -->
+        <div class="section">
+            <div class="section-title">
+                <i>🏆</i> 技能与荣誉
+            </div>
+            <div style="margin-bottom: 20px;">
+                <h4 style="color: #1a1a2e; margin-bottom: 10px;">荣誉奖项</h4>
+                <div class="awards-list">
+                    <span class="award-tag">国家励志奖学金</span>
+                    <span class="award-tag">武汉大学乙等奖学金</span>
+                    <span class="award-tag">武汉大学三好学生</span>
+                    <span class="award-tag">全国大学生测绘学科创新创业智能大赛一等奖</span>
+                    <span class="award-tag">SuperMap杯高校GIS大赛制图组一等奖</span>
+                    <span class="award-tag">SuperMap杯高校GIS大赛分析组二等奖</span>
+                    <span class="award-tag">蓝桥杯大赛国家级三等奖</span>
+                </div>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>AI/LLM应用</h4>
+                    <div class="skill-items">
+                        <span class="skill-tag">LangChain</span>
+                        <span class="skill-tag">Qwen模型</span>
+                        <span class="skill-tag">Prompt Engineering</span>
+                        <span class="skill-tag">RAG系统</span>
+                        <span class="skill-tag">语义分析</span>
+                        <span class="skill-tag">意图识别</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>编程与开发</h4>
+                    <div class="skill-items">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">C#</span>
+                        <span class="skill-tag">PyTorch</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Web服务</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>数据与知识</h4>
+                    <div class="skill-items">
+                        <span class="skill-tag">Neo4j</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">空间数据处理</span>
+                        <span class="skill-tag">GIS分析</span>
+                        <span class="skill-tag">POI分析</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

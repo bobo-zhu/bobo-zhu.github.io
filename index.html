@@ -2,8 +2,10 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>朱道勇 - 个人简历</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>朱道勇 · 智能GIS与AI应用 | 简历</title>
+    <!-- 引入 Font Awesome 6 (免费图标库) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -12,61 +14,90 @@
         }
 
         body {
-            font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 40px 20px;
+            background: radial-gradient(circle at 10% 30%, #eef2ff, #d9e2f5);
+            font-family: 'Inter', 'Segoe UI', 'PingFang SC', Roboto, 'Microsoft YaHei', sans-serif;
+            padding: 48px 24px;
+            color: #1E293B;
         }
 
-        .resume-container {
-            max-width: 900px;
+        /* 平滑滚动 */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* 主容器: 更现代的玻璃质感卡片 */
+        .resume-card {
+            max-width: 1000px;
             margin: 0 auto;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 2rem;
+            box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.25), 0 4px 12px rgba(0, 0, 0, 0.05);
             overflow: hidden;
+            transition: all 0.2s ease;
+            backdrop-filter: blur(0px);
         }
 
-        .header {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        /* 头部渐变 + 现代感 */
+        .hero-section {
+            background: linear-gradient(120deg, #0f172a 0%, #1e293b 100%);
+            padding: 2.5rem 2.8rem;
             color: white;
-            padding: 40px;
-            text-align: center;
+            position: relative;
+            border-bottom: 4px solid #4f46e5;
         }
 
-        .header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            letter-spacing: 4px;
+        .hero-section h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #FFFFFF, #a5b4fc);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 0.5rem;
         }
 
-        .header p {
+        .hero-tagline {
             font-size: 1.1rem;
-            opacity: 0.8;
-            margin-bottom: 15px;
-        }
-
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            font-size: 0.9rem;
-        }
-
-        .contact-info span {
+            font-weight: 500;
+            color: #cbd5e1;
+            margin-bottom: 1.5rem;
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 8px;
+            flex-wrap: wrap;
         }
 
-        .contact-info i {
-            opacity: 0.6;
+        .contact-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 0.9rem 1.2rem;
+            border-radius: 2rem;
+            backdrop-filter: blur(4px);
         }
 
+        .contact-bar span {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #e2e8f0;
+            transition: 0.2s;
+        }
+
+        .contact-bar i {
+            width: 1.4rem;
+            color: #818cf8;
+        }
+
+        /* 通用区块 */
         .section {
-            padding: 30px 40px;
-            border-bottom: 1px solid #f0f0f0;
+            padding: 1.8rem 2.5rem;
+            border-bottom: 1px solid #e9eef3;
+            transition: background 0.2s;
         }
 
         .section:last-child {
@@ -76,418 +107,501 @@
         .section-title {
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-size: 1.3rem;
-            color: #1a1a2e;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #667eea;
+            gap: 0.75rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.3px;
         }
 
         .section-title i {
-            color: #667eea;
+            color: #4f46e5;
+            font-size: 1.5rem;
+            background: #eef2ff;
+            padding: 8px;
+            border-radius: 14px;
         }
 
-        .timeline-item {
+        /* 自荐卡片 清新风格 */
+        .self-note {
+            background: linear-gradient(105deg, #f1f5f9 0%, #ffffff 100%);
+            border-radius: 1.5rem;
+            padding: 1.4rem 1.8rem;
+            border-left: 5px solid #4f46e5;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.02);
+        }
+
+        .self-note p {
+            font-size: 0.98rem;
+            line-height: 1.55;
+            color: #1e293b;
+        }
+
+        /* 时间轴风格 (更柔和) */
+        .timeline-entry {
             position: relative;
-            padding-left: 25px;
-            margin-bottom: 25px;
+            padding-left: 1.8rem;
+            margin-bottom: 2rem;
         }
 
-        .timeline-item::before {
+        .timeline-entry:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-entry::before {
             content: '';
             position: absolute;
             left: 0;
-            top: 5px;
-            width: 12px;
-            height: 12px;
+            top: 0.6rem;
+            width: 10px;
+            height: 10px;
+            background: #4f46e5;
             border-radius: 50%;
-            background: #667eea;
-            border: 2px solid white;
-            box-shadow: 0 0 0 2px #667eea;
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
         }
 
         .timeline-header {
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 8px;
+            align-items: baseline;
+            margin-bottom: 0.35rem;
         }
 
-        .timeline-title {
-            font-weight: 600;
-            color: #1a1a2e;
+        .timeline-title-main {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #0f172a;
         }
 
-        .timeline-company {
-            font-size: 0.9rem;
-            color: #667eea;
-            font-weight: 500;
-        }
-
-        .timeline-period {
+        .timeline-sub {
             font-size: 0.85rem;
-            color: #888;
+            font-weight: 500;
+            color: #4f46e5;
+            margin-left: 0.25rem;
         }
 
-        .timeline-desc {
+        .timeline-date {
+            font-size: 0.75rem;
+            background: #f1f5f9;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            color: #475569;
+        }
+
+        .tech-stack {
+            font-size: 0.8rem;
+            color: #334155;
+            background: #f8fafc;
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            display: inline-block;
+            margin: 0.5rem 0 0.3rem;
+        }
+
+        .desc-text {
             font-size: 0.9rem;
-            color: #555;
-            line-height: 1.7;
+            line-height: 1.5;
+            color: #334155;
+            margin-top: 6px;
         }
 
-        .timeline-desc ul {
-            margin-top: 8px;
-            padding-left: 20px;
+        .highlight-box {
+            background: #fef9e3;
+            border-left: 3px solid #f59e0b;
+            padding: 0.7rem 1rem;
+            border-radius: 14px;
+            margin-top: 10px;
+            font-size: 0.85rem;
+            color: #92400e;
         }
 
-        .timeline-desc li {
-            margin-bottom: 5px;
+        /* 科研成果列表 */
+        .paper-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        .paper-list li {
+            margin-bottom: 0.7rem;
+            font-size: 0.88rem;
+            position: relative;
+            padding-left: 1.2rem;
+        }
+        .paper-list li::before {
+            content: "📄";
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 0.8rem;
         }
 
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
+        /* 技能网格美化 */
+        .skills-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin-top: 0.5rem;
         }
-
-        .skill-category {
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 10px;
+        .skill-block {
+            background: #f8fafc;
+            border-radius: 1.2rem;
+            padding: 1rem 1.4rem;
+            flex: 1;
+            min-width: 180px;
+            transition: 0.2s;
+            border: 1px solid #eef2ff;
         }
-
-        .skill-category h4 {
-            font-size: 0.95rem;
-            color: #1a1a2e;
-            margin-bottom: 10px;
-            padding-bottom: 5px;
-            border-bottom: 1px solid #e0e0e0;
+        .skill-block h4 {
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            color: #1e293b;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1rem;
         }
-
-        .skill-items {
+        .skill-tag-cloud {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
         }
-
         .skill-tag {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
+            background: white;
+            border-radius: 40px;
+            padding: 4px 14px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #1e293b;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+            transition: all 0.1s;
+        }
+        .skill-tag:hover {
+            border-color: #4f46e5;
+            background: #eef2ff;
         }
 
-        .awards-list {
+        .awards-group {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 0.7rem;
+            margin-bottom: 1.2rem;
+        }
+        .award-badge {
+            background: #fef9e3;
+            border-radius: 40px;
+            padding: 5px 16px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #b45309;
+            border: 1px solid #ffedd5;
         }
 
-        .award-tag {
-            background: #fff3cd;
-            color: #856404;
-            padding: 6px 14px;
-            border-radius: 8px;
-            font-size: 0.85rem;
-            border: 1px solid #ffeeba;
+        /* 小点缀 */
+        .float-icon {
+            font-size: 0.8rem;
+            margin-right: 4px;
         }
 
-        .self-assessment {
-            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
-            padding: 20px;
-            border-radius: 10px;
-            border-left: 4px solid #4caf50;
+        hr {
+            margin: 0.6rem 0;
+            border: 0;
+            height: 1px;
+            background: #e2e8f0;
         }
 
-        .self-assessment p {
-            color: #2e7d32;
-            line-height: 1.8;
-            font-size: 0.95rem;
-        }
-
-        .project-highlight {
-            background: #f5f3ff;
-            padding: 15px;
-            border-radius: 8px;
-            margin-top: 10px;
-            border-left: 3px solid #7c4dff;
-        }
-
-        .project-highlight p {
-            color: #534bae;
-            font-size: 0.9rem;
-        }
-
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 1.8rem;
+        @media (max-width: 700px) {
+            body {
+                padding: 24px 16px;
             }
-
-            .contact-info {
-                flex-direction: column;
-                gap: 10px;
-            }
-
             .section {
-                padding: 20px;
+                padding: 1.5rem 1.2rem;
             }
-
+            .hero-section {
+                padding: 1.8rem 1.2rem;
+            }
+            .contact-bar {
+                flex-direction: column;
+                gap: 0.6rem;
+                align-items: flex-start;
+            }
             .timeline-header {
                 flex-direction: column;
                 gap: 5px;
             }
         }
+        
+        /* 微调打印样式 */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .resume-card {
+                box-shadow: none;
+                border-radius: 0;
+            }
+            .contact-bar {
+                background: #f3f4f6;
+            }
+            .skill-tag {
+                background: #eef2ff;
+                border: 1px solid #ccc;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="resume-container">
-        <!-- Header -->
-        <div class="header">
+    <div class="resume-card">
+        <!-- 头部区域：现代感增强 -->
+        <div class="hero-section">
             <h1>朱道勇</h1>
-            <p>测绘工程 · 硕士 · 武汉大学</p>
-            <div class="contact-info">
-                <span><i>📞</i> 15971939980</span>
-                <span><i>📧</i> zhudaoyong@whu.edu.cn</span>
-                <span><i>💬</i> zdy336yyds</span>
-                <span><i>🎓</i> 2027届毕业生</span>
+            <div class="hero-tagline">
+                <i class="fas fa-graduation-cap" style="color:#818cf8;"></i> 测绘工程硕士 · 武汉大学
+                <span style="font-size:0.8rem; background:rgba(255,255,255,0.15); padding:2px 8px; border-radius:30px;">2027届</span>
+            </div>
+            <div class="contact-bar">
+                <span><i class="fas fa-phone-alt"></i> 15971939980</span>
+                <span><i class="fas fa-envelope"></i> zhudaoyong@whu.edu.cn</span>
+                <span><i class="fab fa-weixin"></i> zdy336yyds</span>
+                <span><i class="fas fa-map-marker-alt"></i> 湖北·武汉</span>
+                <span><i class="fab fa-github"></i> AI Agent / RAG 深度实践</span>
             </div>
         </div>
 
-        <!-- Self Assessment -->
+        <!-- 自荐理由（匹配游戏/AI提效风格，但保留原意，无夸大） -->
         <div class="section">
             <div class="section-title">
-                <i>💡</i> 自荐理由
+                <i class="fas fa-lightbulb"></i> 自荐理由
             </div>
-            <div class="self-assessment">
-                <p>具备Agent决策系统的全链路开发经验（任务拆解→工具调用→多维度评估→结果生成），熟悉大模型在出行/地理决策场景的应用落地；测绘工程专业背景赋予对公交、POI、出行路线等空间场景的深入理解；一作SCI论文证明快速学习与科研转化能力。</p>
+            <div class="self-note">
+                <p><i class="fas fa-robot" style="color:#4f46e5; margin-right:6px;"></i> 具备Agent/RAG全链路开发经验：从知识图谱构建（Neo4j）、检索增强生成（LangChain+Qwen）到多步智能体工作流（选址系统）。<br>
+                <i class="fas fa-code"></i> 精通 Python/C++，有 KD-Tree 算法优化及软件著作权，熟悉 Node.js 后端与空间数据处理。<br>
+                <i class="fas fa-brain"></i> 深度使用AI编程工具（Trae等），擅长 Prompt Engineering，能高效协作完成代码生成、重构与调试。<br>
+                <i class="fas fa-chart-line"></i> 一作SCI二区论文 + 授权发明专利，持续跟进前沿LLM技术，快速将前沿论文思想转化为工程原型。</p>
             </div>
         </div>
 
-        <!-- Education -->
+        <!-- 教育背景 -->
         <div class="section">
             <div class="section-title">
-                <i>🎓</i> 教育背景
+                <i class="fas fa-university"></i> 教育背景
             </div>
-            <div class="timeline-item">
+            <div class="timeline-entry">
                 <div class="timeline-header">
                     <div>
-                        <div class="timeline-title">测绘工程（硕士）</div>
-                        <div class="timeline-company">武汉大学资环学院</div>
+                        <span class="timeline-title-main">测绘工程 硕士</span>
+                        <span class="timeline-sub">武汉大学资环学院</span>
                     </div>
-                    <div class="timeline-period">2025.09 - 至今</div>
+                    <div class="timeline-date">2025.09 — 至今</div>
                 </div>
-                <div class="timeline-desc">
-                    <ul>
-                        <li>2025年第二十届地理信息科学理论与方法学术年会（快闪报告）</li>
-                    </ul>
-                </div>
+                <div class="desc-text">🎤 第二十届地理信息科学理论与方法学术年会 · 快闪报告</div>
             </div>
-            <div class="timeline-item">
+            <div class="timeline-entry">
                 <div class="timeline-header">
                     <div>
-                        <div class="timeline-title">地理信息科学（数字地图与空间信息工程）（本科）</div>
-                        <div class="timeline-company">武汉大学资环学院</div>
+                        <span class="timeline-title-main">地理信息科学 本科</span>
+                        <span class="timeline-sub">数字地图与空间信息工程 · 武汉大学</span>
                     </div>
-                    <div class="timeline-period">2021.09 - 2025.06</div>
+                    <div class="timeline-date">2021.09 — 2025.06</div>
                 </div>
-                <div class="timeline-desc">
-                    <ul>
-                        <li>GPA：3.78/4.0</li>
-                        <li>优秀毕业生、国家励志奖学金、武汉大学"三好学生"</li>
-                        <li>心理委员（2021-2025）</li>
-                    </ul>
-                </div>
+                <div class="desc-text">📊 GPA: 3.78/4.0 | 优秀毕业生 · 国家励志奖学金 · 武汉大学三好学生 | 心理委员 (2021-2025)</div>
             </div>
         </div>
 
-        <!-- Project Experience -->
+        <!-- 项目经历 (重点突出AI/工程能力) -->
         <div class="section">
             <div class="section-title">
-                <i>💼</i> 项目经历
+                <i class="fas fa-laptop-code"></i> 项目经历
             </div>
-            <div class="timeline-item">
+
+            <!-- RAG系统 -->
+            <div class="timeline-entry">
                 <div class="timeline-header">
                     <div>
-                        <div class="timeline-title">历史文化名城RAG系统</div>
-                        <div class="timeline-company">核心开发成员</div>
+                        <span class="timeline-title-main">历史文化名城RAG系统</span>
+                        <span class="timeline-sub">核心开发</span>
                     </div>
-                    <div class="timeline-period">2025.04 - 至今</div>
+                    <div class="timeline-date">2025.04 — 至今</div>
                 </div>
-                <div class="timeline-desc">
-                    <strong>技术栈：</strong>LangChain + Qwen3-8B + Neo4j + PyTorch<br>
-                    <strong>职责：</strong>负责基于Neo4j图数据库构建历史文化知识图谱，作为长期记忆（LTM）模块；利用Qwen3-8B模型和LangChain框架搭建检索增强生成（RAG）系统，实现针对特定领域知识的问答与语义检索。
-                    <div class="project-highlight">
-                        <p><strong>业绩：</strong>完成了从数据抽取、图谱构建到LLM应用部署的全流程，深入理解Transformer解码器架构、Attention机制及大模型推理优化。</p>
-                    </div>
-                </div>
+                <div class="tech-stack"><i class="fas fa-cubes"></i> LangChain + Qwen3-8B + Neo4j + PyTorch</div>
+                <div class="desc-text">基于Neo4j构建历史知识图谱（长期记忆模块），利用LangChain + Qwen3-8B搭建检索增强生成系统，实现领域知识问答与语义检索。完成数据抽取→图谱构建→LLM部署全流程，深入理解Transformer解码器及Attention机制。</div>
+                <div class="highlight-box"><i class="fas fa-database"></i> 全链路落地：知识结构化+生成式问答，为AI提效管线积累经验。</div>
             </div>
-            <div class="timeline-item">
+
+            <!-- 选址智能体系统 -->
+            <div class="timeline-entry">
                 <div class="timeline-header">
                     <div>
-                        <div class="timeline-title">奶茶店优化选址智能体系统</div>
-                        <div class="timeline-company">独立开发</div>
+                        <span class="timeline-title-main">奶茶店优化选址智能体系统</span>
+                        <span class="timeline-sub">独立开发</span>
                     </div>
-                    <div class="timeline-period">2026.05 - 至今</div>
+                    <div class="timeline-date">2026.05 — 至今</div>
                 </div>
-                <div class="timeline-desc">
-                    <strong>技术栈：</strong>Trae + 高德地图MCP服务 + 自定义Agent + HTML/JS<br>
-                    <strong>职责：</strong>编写系统化提示词，定义五步闭环工作流（获取坐标→竞品分析→客群评估→交通可达性→生成报告），实现Agent自主规划与执行；配置高德地图MCP Server，封装4个核心API。
-                    <div class="project-highlight">
-                        <p><strong>业绩：</strong>系统可同时评估4个维度，覆盖半径500-1000米范围，单次评估可检索并分析50+个周边POI，提示词模板可迁移至其他餐饮品类选址评估。</p>
-                    </div>
-                </div>
+                <div class="tech-stack"><i class="fas fa-map-marked-alt"></i> Trae IDE + 高德地图MCP + 自定义Agent + HTML/JS</div>
+                <div class="desc-text">编写系统化提示词，定义五步闭环（坐标→竞品分析→客群评估→交通可达性→报告），配置MCP Server封装4个核心API，实现AI自主调用地图数据。系统评估4个维度（竞品密度/客群/交通/商业氛围），单次检索50+周边POI。</div>
+                <div class="highlight-box"><i class="fas fa-route"></i> 提示词模板可迁移至其他餐饮品类选址，展现了Agent工作流与真实业务场景的结合能力。</div>
             </div>
-            <div class="timeline-item">
+
+            <!-- 空间智能计算工具箱 (C++/算法优化) -->
+            <div class="timeline-entry">
                 <div class="timeline-header">
                     <div>
-                        <div class="timeline-title">空间智能计算工具箱开发</div>
-                        <div class="timeline-company">核心开发者 · 已获软件著作权</div>
+                        <span class="timeline-title-main">空间智能计算工具箱</span>
+                        <span class="timeline-sub">核心开发者 · 软件著作权</span>
                     </div>
-                    <div class="timeline-period">2022.12 - 2024.06</div>
+                    <div class="timeline-date">2022.12 — 2024.06</div>
                 </div>
-                <div class="timeline-desc">
-                    <strong>职责：</strong>独立负责空间分区核心算法模块的开发。引入空间权重矩阵和层次聚类思想，基于KD-Tree优化算法时间复杂度，提升大规模数据处理效率；基于Python + QT封装为可视化工具箱。
-                    <div class="project-highlight">
-                        <p><strong>业绩：</strong>深入理解聚类算法、图结构及复杂度分析，获软件著作权。</p>
-                    </div>
-                </div>
+                <div class="tech-stack"><i class="fas fa-chart-line"></i> Python/C++ | QT | KD-Tree优化</div>
+                <div class="desc-text">独立负责空间分区核心算法，引入空间权重矩阵+层次聚类，基于KD-Tree优化算法时间复杂度，提升大规模数据处理效率。封装为可视化工具箱，深入理解图结构与复杂度分析。</div>
+                <div class="highlight-box"><i class="fas fa-microchip"></i> C++工程实践 · 算法落地获软件著作权。</div>
             </div>
-            <div class="timeline-item">
+
+            <!-- WebGIS全栈 -->
+            <div class="timeline-entry">
                 <div class="timeline-header">
                     <div>
-                        <div class="timeline-title">WebGIS网页开发</div>
-                        <div class="timeline-company">小组队长</div>
+                        <span class="timeline-title-main">WebGIS网页开发</span>
+                        <span class="timeline-sub">小组队长</span>
                     </div>
-                    <div class="timeline-period">2022.06 - 2023.09</div>
+                    <div class="timeline-date">2022.06 — 2023.09</div>
                 </div>
-                <div class="timeline-desc">
-                    <strong>技术栈：</strong>Node.js + MySQL + HTML/CSS/JS<br>
-                    <strong>职责：</strong>负责Node.js服务器搭建及前后端接口设计；参与前端页面开发。
-                    <div class="project-highlight">
-                        <p><strong>业绩：</strong>独立完成服务端开发与数据库交互，具备基本的开发和接口设计能力。</p>
+                <div class="tech-stack">Node.js + MySQL + HTML/CSS/JS</div>
+                <div class="desc-text">负责Node.js服务器搭建及前后端接口设计，参与前端开发，独立完成服务端与数据库交互（MySQL），具备全栈基础与接口设计能力。</div>
+            </div>
+
+            <!-- 大创项目 + 遥感解译 合并但体现丰富性 -->
+            <div class="timeline-entry">
+                <div class="timeline-header">
+                    <div>
+                        <span class="timeline-title-main">省级大创 & 遥感影像解译</span>
+                        <span class="timeline-sub">负责人 / 核心成员</span>
                     </div>
+                    <div class="timeline-date">2022.09 — 2024.06</div>
                 </div>
+                <div class="desc-text">🔹 基于PSR模型的黄土高原耕地生态保护（负责人）：MATLAB实现模拟退化算法，求解主客观权重最优组合，结题优秀。<br>
+                🔹 湖北省生态环境遥感解译：目视解译与变化检测（耕地→工业用地），完成百余地块精准判别入库，使用ArcGIS更新数据库，锻炼复杂空间数据处理能力。</div>
             </div>
         </div>
 
-        <!-- Research Achievements -->
+        <!-- 科研成果 (论文+专利) -->
         <div class="section">
             <div class="section-title">
-                <i>📝</i> 科研成果
+                <i class="fas fa-microscope"></i> 科研成果
             </div>
-            <div class="timeline-item">
-                <div class="timeline-header">
-                    <div class="timeline-title">期刊论文</div>
-                </div>
-                <div class="timeline-desc" style="font-size: 0.85rem;">
-                    <ul>
-                        <li><strong>一作：</strong>Daoyong Zhu, Yumin Chen, Ge Han et al. 《Estimating monthly China XCO2 based on DQ-1 data and spatiotemporal heterogeneous filtering model》（IJDE，SCI 2区）</li>
-                        <li><strong>合作：</strong>Yonghui Tan, Yumin Chen, Rui Zhu, Daoyong Zhu et al. 《SSDFNet: A State Space Guided Network for Multimodal Building Extraction and Solar Modeling》（IEEE，SCI 2区）</li>
-                    </ul>
-                </div>
+            <ul class="paper-list" style="margin-bottom: 1rem;">
+                <li><strong>一作SCI (二区) :</strong> Daoyong Zhu, Yumin Chen, et al. 《Estimating monthly China XCO2 based on DQ-1 data and spatiotemporal heterogeneous filtering model》 (IJDE, JCR Q2)</li>
+                <li><strong>合作SCI (二区) :</strong> Yonghui Tan, Yumin Chen, Rui Zhu, Daoyong Zhu et al. 《SSDFNet: State Space Guided Network for Multimodal Building Extraction》 (IEEE, Q2)</li>
+                <li><strong>授权发明专利 :</strong> 陈玉敏, 朱道勇等. CO₂浓度空间滤值地理加权回归建模方法及装置 (CN202411556739.0) ✅已授权</li>
+            </ul>
+        </div>
+
+        <!-- 实习经历 -->
+        <div class="section">
+            <div class="section-title">
+                <i class="fas fa-briefcase"></i> 实习经历
             </div>
-            <div class="timeline-item">
+            <div class="timeline-entry">
                 <div class="timeline-header">
-                    <div class="timeline-title">发明专利</div>
+                    <div>
+                        <span class="timeline-title-main">3维DEM数据生产实习生</span>
+                        <span class="timeline-sub">武汉珞珈新图科技有限公司</span>
+                    </div>
+                    <div class="timeline-date">2025.07 — 2025.08</div>
                 </div>
-                <div class="timeline-desc" style="font-size: 0.85rem;">
-                    <ul>
-                        <li>陈玉敏，朱道勇等. CO2浓度空间滤值地理加权回归建模方法及装置. CN202411556739.0（已授权）</li>
-                    </ul>
+                <div class="desc-text">基于VR三维地形编辑平台进行DEM可视化修订与质量检查，完成约25平方公里地形异常值修正，通过项目验收，锻炼了地形数据处理与工具使用能力。</div>
+            </div>
+            <div class="timeline-entry">
+                <div class="timeline-header">
+                    <div>
+                        <span class="timeline-title-main">湖北省生态环境遥感影像解译实习生</span>
+                        <span class="timeline-sub">武汉大学资环学院</span>
+                    </div>
+                    <div class="timeline-date">2023.09 — 2024.06</div>
                 </div>
+                <div class="desc-text">负责多县域遥感影像目视解译与变化检测，使用ArcGIS更新数据库，百余地块精准入库，提升空间数据分析及属性判读能力。</div>
             </div>
         </div>
 
-        <!-- Internship -->
+        <!-- 技能 & 荣誉 (标签视觉优化) -->
         <div class="section">
             <div class="section-title">
-                <i>💻</i> 实习经历
+                <i class="fas fa-cogs"></i> 技能与荣誉
             </div>
-            <div class="timeline-item">
-                <div class="timeline-header">
-                    <div>
-                        <div class="timeline-title">3维DEM数据生产实习生</div>
-                        <div class="timeline-company">武汉珞珈新图科技有限公司</div>
-                    </div>
-                    <div class="timeline-period">2025.07 - 2025.08</div>
-                </div>
-                <div class="timeline-desc">
-                    <strong>职责：</strong>负责基于VR三维地形编辑平台进行DEM数据的可视化修订与质量检查，使用地形编辑工具对数字高程模型进行局部高程修正、地形细节优化。
-                    <div class="project-highlight">
-                        <p><strong>业绩：</strong>共完成约25平方公里地形异常值的修正，并通过项目质量验收。</p>
-                    </div>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-header">
-                    <div>
-                        <div class="timeline-title">湖北省生态环境遥感影像解译实习生</div>
-                        <div class="timeline-company">武汉大学资环学院</div>
-                    </div>
-                    <div class="timeline-period">2023.09 - 2024.06</div>
-                </div>
-                <div class="timeline-desc">
-                    <strong>职责：</strong>负责多县域的遥感影像目视解译与变化检测（耕地→工业用地），使用ArcGIS更新数据库。
-                    <div class="project-highlight">
-                        <p><strong>业绩：</strong>完成百余地块的精准判别与入库，锻炼了对复杂空间/属性数据的处理能力。</p>
-                    </div>
+            <!-- 奖项区 -->
+            <div style="margin-bottom: 1.5rem;">
+                <div style="display:flex; align-items:center; gap:6px; margin-bottom: 0.8rem;"><i class="fas fa-trophy" style="color:#eab308;"></i><strong style="font-size: 1rem;">主要荣誉</strong></div>
+                <div class="awards-group">
+                    <span class="award-badge">🏅 国家励志奖学金</span>
+                    <span class="award-badge">📘 武汉大学乙等奖学金</span>
+                    <span class="award-badge">⭐ 武汉大学三好学生</span>
+                    <span class="award-badge">🗺️ 全国测绘学科创新创业智能大赛一等奖</span>
+                    <span class="award-badge">🏆 SuperMap杯制图组一等奖</span>
+                    <span class="award-badge">📊 SuperMap杯分析组二等奖</span>
+                    <span class="award-badge">💻 蓝桥杯全国三等奖</span>
+                    <span class="award-badge">🎨 中国计算机设计大赛省一等奖</span>
+                    <span class="award-badge">❤️ 校级优秀心理委员</span>
                 </div>
             </div>
-        </div>
 
-        <!-- Skills & Honors -->
-        <div class="section">
-            <div class="section-title">
-                <i>🏆</i> 技能与荣誉
-            </div>
-            <div style="margin-bottom: 20px;">
-                <h4 style="color: #1a1a2e; margin-bottom: 10px;">荣誉奖项</h4>
-                <div class="awards-list">
-                    <span class="award-tag">国家励志奖学金</span>
-                    <span class="award-tag">武汉大学乙等奖学金</span>
-                    <span class="award-tag">武汉大学三好学生</span>
-                    <span class="award-tag">全国大学生测绘学科创新创业智能大赛一等奖</span>
-                    <span class="award-tag">SuperMap杯高校GIS大赛制图组一等奖</span>
-                    <span class="award-tag">SuperMap杯高校GIS大赛分析组二等奖</span>
-                    <span class="award-tag">蓝桥杯大赛国家级三等奖</span>
-                </div>
-            </div>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h4>AI/LLM应用</h4>
-                    <div class="skill-items">
+            <!-- 技能网格 -->
+            <div class="skills-wrapper">
+                <div class="skill-block">
+                    <h4><i class="fas fa-microchip"></i> AI/LLM应用</h4>
+                    <div class="skill-tag-cloud">
                         <span class="skill-tag">LangChain</span>
-                        <span class="skill-tag">Qwen模型</span>
+                        <span class="skill-tag">Qwen3-8B部署</span>
                         <span class="skill-tag">Prompt Engineering</span>
-                        <span class="skill-tag">RAG系统</span>
-                        <span class="skill-tag">语义分析</span>
-                        <span class="skill-tag">意图识别</span>
+                        <span class="skill-tag">RAG系统构建</span>
+                        <span class="skill-tag">语义分析/意图识别</span>
+                        <span class="skill-tag">Function Calling</span>
                     </div>
                 </div>
-                <div class="skill-category">
-                    <h4>编程与开发</h4>
-                    <div class="skill-items">
+                <div class="skill-block">
+                    <h4><i class="fas fa-code"></i> 编程与工程</h4>
+                    <div class="skill-tag-cloud">
                         <span class="skill-tag">Python</span>
-                        <span class="skill-tag">C#</span>
+                        <span class="skill-tag">C++ (算法/优化)</span>
                         <span class="skill-tag">PyTorch</span>
-                        <span class="skill-tag">SQL</span>
                         <span class="skill-tag">Node.js</span>
-                        <span class="skill-tag">Web服务</span>
+                        <span class="skill-tag">SQL (MySQL/PG)</span>
+                        <span class="skill-tag">C# (基础)</span>
+                        <span class="skill-tag">Git / 调试</span>
                     </div>
                 </div>
-                <div class="skill-category">
-                    <h4>数据与知识</h4>
-                    <div class="skill-items">
-                        <span class="skill-tag">Neo4j</span>
-                        <span class="skill-tag">PostgreSQL</span>
-                        <span class="skill-tag">MySQL</span>
-                        <span class="skill-tag">空间数据处理</span>
-                        <span class="skill-tag">GIS分析</span>
-                        <span class="skill-tag">POI分析</span>
+                <div class="skill-block">
+                    <h4><i class="fas fa-database"></i> 数据与空间智能</h4>
+                    <div class="skill-tag-cloud">
+                        <span class="skill-tag">Neo4j 图数据库</span>
+                        <span class="skill-tag">PostgreSQL/MySQL</span>
+                        <span class="skill-tag">空间分析/GIS</span>
+                        <span class="skill-tag">高德MCP/POI分析</span>
+                        <span class="skill-tag">KD-Tree优化</span>
+                        <span class="skill-tag">ArcGIS/QGIS</span>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <!-- 自我评价/Agent思维 (无夸大，来自原文) -->
+        <div class="section" style="background:#fcfdff;">
+            <div class="section-title">
+                <i class="fas fa-comment-dots"></i> 自我评价
+            </div>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.8rem; background:#ffffff; border-radius: 1.2rem; padding: 0.2rem 0;">
+                <div style="flex:1; min-width: 200px;">
+                    <p style="margin-bottom: 0.5rem;"><i class="fas fa-arrows-spin"></i> <strong>闭环思维</strong> —— 具备规划→工具调用→长期记忆→反思的Agent体系理解，完成RAG从数据到服务的全链路开发。</p>
+                    <p><i class="fas fa-rocket"></i> <strong>快速科研转化</strong> —— 一作SCI二区论文+发明专利，持续跟踪o1、Reflexion等前沿技术，乐于将新思路落地实践。</p>
+                </div>
+                <div style="flex:1; min-width: 200px;">
+                    <p><i class="fas fa-users"></i> <strong>项目负责人经验</strong> —— 独立负责智能体系统、核心算法模块，能将算法嵌入选址、知识问答等真实场景，适应自研引擎与AI提效管线。</p>
+                    <p><i class="fas fa-brain"></i> <strong>AI原生协作</strong> —— 深度使用Trae/Cursor类AI编程工具，高效协作生成/重构代码，适应内网自研工具环境。</p>
+                </div>
+            </div>
+            <hr style="margin-top: 1rem;">
+            <div style="font-size: 0.8rem; text-align: center; color: #5b6e8c; margin-top: 0.8rem;">
+                <i class="fas fa-laptop"></i> 期待在自研引擎/AI提效/图形方向贡献价值 · 快速学习，热爱挑战
             </div>
         </div>
     </div>

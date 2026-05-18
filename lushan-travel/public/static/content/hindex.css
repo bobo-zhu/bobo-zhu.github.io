@@ -1,0 +1,377 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+#home{
+    position: relative;
+    height: 100%;
+    /* 实现页面滚动特效 */
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+}
+/* 头部 */
+.header{
+    transition: all 0.3s ease-out 0s;
+    position: fixed;
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0));
+    color: #333;
+    text-align: center;
+    line-height: 85px;
+    top: 0;
+    width: 100%;
+    height: 85px;
+    z-index: 100;
+  }
+
+section{
+    width: 100%;
+    height: 100%;
+    /* 滚动特效 */
+    scroll-snap-align: start;
+    /* 背景色和背景图片叠加 */
+    background-blend-mode: multiply;
+}
+.banner{
+    width: 100%;
+    height: 100%;
+}
+
+/* 左侧logo */
+.logo{
+    float: left;
+    width: 85px;
+    height: 85px;
+    margin: 0 20px;
+}
+.logo img{
+    max-height: 65%;
+    vertical-align: middle;
+    display: inline-block;
+}
+/* 导航栏 */
+.header .nav{
+    left: 230px;
+    right: 50%;
+    text-align: left;
+    float: left;
+}
+.nav ul li{
+    box-sizing: border-box;
+    float: left;
+    border-bottom: 0px solid #00adb5;
+    position: relative;
+    height: 60px;
+    text-align: center;
+    width: 190px;
+}
+/* 设置Tab标签下边动画 */
+.nav ul li.active {
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 2px solid #ffffff;
+}
+.nav ul li::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 0;
+    height: 60px;
+    border-bottom: 2px solid #ffffff;
+    transition: 0.2s all linear;
+}
+
+.nav ul li:hover::before {
+    width: 100%;
+    left: 0;
+}
+.nav ul li:hover~li::before {
+    left: 0;
+}
+.nav ul li a{
+    margin: 0 14px;
+    color: #ddd;
+    display: inline-block;
+    position: relative;
+    font-family: 'Times New Roman Negreta',"Century Gothic","Microsoft YaHei",微软雅黑,黑体;
+    font-size: 18px;
+}
+/* 右侧工具栏 可拓展*/
+.header .tools{
+    color: #fff;
+    float: right;
+    align-items: center;
+    height: 85px;
+    width: 112px;
+    line-height: 85px;
+    padding-top: 15px;
+}
+
+
+/* 轮播图导航 */
+.navc{
+    position: absolute;
+    bottom: 45px;
+    right: 80px;
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+    height: 50px;
+}
+.slick-dots{
+    position: relative;
+}
+.slick-dot{
+    font-size: 15px;
+    margin: 0 10px;
+    font-family: Arial;
+    cursor: pointer;
+    vertical-align: middle;
+    display: inline-block;
+}
+.slick-dot::after{
+    content: "";
+    border-top: 1px solid #fff;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 5px;
+    /* width: 65px; */
+    transition: all 0.5s ease-out 0s;
+}
+.active{
+    font-size: 25px;
+    transition: all 0.5s ease-out 0s;
+}
+.active::after{
+    width: 65px;
+    transition: all 0.5s ease-out 0s;
+}
+
+/* 上拉故事页 */
+.bb{
+    position: absolute;
+    left: 50%;
+    bottom:0;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    transform: translateX(-50%) ;
+    cursor: pointer;
+    animation: bb 2s linear 0s infinite;
+    animation-duration: 2s;
+    z-index: 100;
+}
+.bb img{
+    width: 30px;
+    height: 30px;
+}
+/* .bb::before{
+    content: url(../images/down.png);
+    display: block;
+    width: 20px;
+    height: 20px;
+} */
+
+@keyframes bb{
+    0%{
+        bottom: 20px;
+    }
+    100%{
+        bottom: 10px;
+        display: none;
+    }
+}
+/* 故事页 */
+
+section{
+    background-color: #000;
+    }
+.story{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+.story img{
+    position: absolute;
+    border-radius: 8px;
+    left: 11%;
+    top: 28%;
+    width: 35%;
+    height: 45%;
+    /* height: 231.42px; */
+}
+.story .para{
+    position: absolute;
+    width: 35%;
+    left: 54%;
+    top: 28%;
+}
+.para h4{
+    font-family: "Century Gothic";
+    font-size: 32px;
+    color: #fff;
+    margin-bottom: 2vh;
+}
+.para p{
+    font-family: "Century Gothic";
+    font-size: 20px;
+    color: #9ba2b2;
+}
+
+/* 详细介绍页导航 */
+html,body{
+    width: 100%;
+    overflow: hidden;
+}
+.home{
+    height: 100%;
+}
+
+.map{
+    width: 0;
+    height: 100%;
+    background-color: rgba(0,0,0,0);
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 100;
+}
+.map img{
+    position: fixed;
+    right: 22px;
+    bottom: 12vh;
+    width: 40px;
+    position: fixed;
+    cursor: pointer;
+    z-index: 1;
+}
+.nav-sli{
+    background-color: #111;
+    opacity: 1;
+    position:fixed;
+    right: 0;
+    width: 0;
+    height: 100%;
+}
+.nav-sli ul{
+    list-style: none;
+    width: 100%;
+    padding: 0px;
+}
+.nav-sli ul li{
+    position: relative;
+    height: 60px;
+}
+.nav-sli ul li a .block{
+    position: absolute;
+    display: none;
+    top: 40px;
+    left: 15px;
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px #666;
+}
+.nav-sli ul li a .tooltip{
+    position: absolute;
+    display: none;
+    right: 90px;
+    top: 55px;
+    color: #000;
+    background-color: #fff;
+    opacity: 0.8;
+    width: 100px;
+    height: 25px;
+    border-radius: 3px;
+    text-align: center;
+}
+.nav-sli ul li a img{
+    position: relative;
+    top: 50px;
+    left: 33%;
+    width: 25px;
+    z-index: 99;
+}
+.slider{
+    position: absolute;
+    left: 100%;
+    width: 0;
+    top: 0;
+    /* height:100%; */
+    height:auto!important;
+    height:100%;
+    min-height:100%;
+    z-index: 90;
+}
+.slider .mapSlider{
+    position: relative;
+    background-color: black;
+    height: 100vh;
+    color: #fff;
+    width: 0;
+    z-index: 99;
+    display: none;
+    overflow:hidden;
+}
+
+.slider .return{
+    position: fixed;
+    width: 0px;
+    height: 50px;
+    top: 50%;
+    left: 25px;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 100;
+}
+.slider .return img{
+    width: 30px;
+}
+.occupy-left{
+    width: 100px;
+    height: 100%;
+    background-color: rgba(0,0,0,0);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.occupy-down{
+    height: 20vh;
+    width: 100%;
+    background-color: rgba(0,0,0,0);
+    position: absolute;
+    bottom:  0;
+}
+/* 跳转页面最顶部 */
+.gotop{
+    position: fixed;
+    bottom: 5vh;
+    /* 居中 */
+    /* left: 50%; */
+    /* margin-left: -25px; 盒子自身一半的大小 */
+    /* 靠左 */
+    right: 22px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    /* display: none; */
+}
+.gotop img{
+    width: 40px;
+    height: 40px;
+}
+
+/* “关于我们” */
+.About{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    height: 500px;
+    width: 700px;
+    margin-top: -250px;
+    margin-left: -350px;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 200;
+    border-radius: 20px;
+}

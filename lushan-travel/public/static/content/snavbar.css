@@ -1,0 +1,187 @@
+.snavbar {
+    z-index: 2;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 0%;
+    height: 100vh;
+    opacity: 0.8;
+}
+
+.snavbar input {
+    display: none;
+}
+
+.snavbar .slogo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotateZ(0deg);
+    cursor: pointer;
+    transition: all 1s;
+    padding: 40px 40px;
+}
+
+.snavbar .slogo img {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+}
+
+.snavbar ul {
+    position: absolute;
+    left: -200px;
+    width: 200px;
+    height: 100%;
+    background-color: #fff;
+    transition: all 1s;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+}
+
+.snavbar ul>li:first-child {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+    height: 150px;
+}
+
+.snavbar ul>li:first-child img {
+    width: 80px;
+    border-radius: 50%;
+}
+
+.snavbar ul>li:first-child span {
+    display: inline-block;
+    color: #2c2c2c;
+    font-size: 16px;
+    white-space: nowrap;
+    height: 30px;
+    line-height: 30px;
+}
+
+.snavbar ul>li:first-child span:hover {
+    color: #52658F;
+    cursor: pointer;
+}
+
+.snavbar input:checked + .slogo {
+    left: 200px;
+}
+
+.snavbar input:checked + .slogo {
+    transform: rotateZ(360deg);
+}
+
+.snavbar #ncheckbox:checked ~ ul {
+    left: 0px;
+}
+
+li {
+    list-style: none;
+}
+
+.snavbar .option {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.snavbar .option label {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 50px;
+    background-color: #fff;
+    padding: 10px 50px;
+    color: #2c2c2c;
+    cursor: pointer;    
+}
+
+.snavbar .option label i {
+    position: absolute;
+    top: calc(50% - 10px);
+    left: 15px;
+    font-size: 20px;
+    transform: rotateZ(0deg);
+    transition: all 0.5s;
+}
+.snavbar .option label span {
+    position: absolute;
+    top: calc(50% - 12px);
+    left: 35px;
+    font-size: 16px;
+}
+
+.snavbar .option label::after {
+    content: "";
+    position: absolute;
+    right: 25px;
+    bottom: -10px;
+    width: 20px;
+    height: 20px;
+    background-color: inherit;
+    transform: rotate(45deg);
+}
+
+.snavbar .option label:hover {
+    background-color: #ddd;
+}
+
+.snavbar .option:not(:first-chid) label {
+    border-top: 1px solid #2c2c2c;
+}
+
+.snavbar .option ol {
+    width: 100%;
+    background-color: #eee;
+}
+
+.snavbar .option ol li {
+    position: relative;
+    width: 100%;
+    height: 0;
+    color: #2c2c2c;
+    line-height: 40px;
+    font-size: 14px;
+    padding-left: 20px;
+    transform-origin: 0 50%;
+    transition: all 0.5s;
+}
+
+.snavbar .option ol li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 5px;
+    height: 44px;
+    background-color: transparent;
+}
+.snavbar .option ol li:hover {
+    cursor: pointer;
+}
+.snavbar .option ol li:hover::before {
+    background-color: #52658F;
+}
+
+.snavbar .option input:checked ~label i {
+    transform: rotateZ(90deg)
+}
+
+.snavbar .option input:checked ~ ol li {
+    height: 40px;
+}
+
+#no1:link { text-decoration: none;color:#2c2c2c}
+/* a:active { text-decoration:blink} */
+#no1:hover { text-decoration:none;color: #2c2c2c;}
+#no1:visited { text-decoration: none;color: #2c2c2c}
+
+#no2:link { text-decoration: none;color:#2c2c2c}
+/* a:active { text-decoration:blink} */
+#no2:hover { text-decoration:none;color: #2c2c2c;}
+#no2:visited { text-decoration: none;color: #2c2c2c}

@@ -1,0 +1,310 @@
+.stoolbar {
+    z-index: 2;
+    position: absolute;
+    float: right;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    opacity: 0.8;
+}
+
+.stoolbar ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.stoolbar {
+    width: 40px;
+    border-radius: 20px;
+    margin: 20px 20px;
+    background-color: #fff;
+}
+
+.stoolbar input {
+    width: 40px;
+    height: 40px;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.stoolbar span {
+    position: absolute;
+    top: 15px;
+    left: 12.5px;
+    width: 15px;
+    height: 2px;
+    background-color: #2c2c2c;
+    border-radius: 7.5px;
+    pointer-events: none;
+    transition: transform 0.3s ease-in-out,top 0.3s ease-in-out 0.3s;
+}
+
+.stoolbar span:nth-child(3) {
+    top: 23px;
+}
+
+.stoolbar ul {
+    height: 0;
+    overflow: hidden;
+    transition: all 0.5s;
+}
+
+.stoolbar ul li {
+    position: relative;
+    list-style: none;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: all 1s;
+}
+
+.stoolbar ul li div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+
+}
+.stoolbar ul li a {
+    margin: 15px 10px;
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+/* toolbar的提示信息 */
+.stooltip{
+    z-index: 2;
+    position: absolute;
+    float: right;
+    top: 60px;
+    right: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 150px;
+    height: 0;
+    margin: 20px 0;
+    padding: 0 20px;
+    background-color: rgba(0, 0,0, 0);
+    overflow: hidden;
+}
+.stooltip ul li{
+    position: relative;
+    list-style: none;
+    width: 0;
+    height: 40px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.stooltip ul li .tooltip-li{
+    position: absolute;
+    display: block;
+    right: 0px;
+    top: 10px;
+    color: #000;
+    background-color: #fff;
+    opacity: 0.8;
+    width: 110px;
+    height: 25px;
+    border-radius: 3px;
+    text-align: center;
+    line-height: 25px;
+    font-family: "Century Gothic";
+}
+.stooltip ul li .selection{
+    position: absolute;
+    display: block;
+    right: 0px;
+    top: 35px;
+    color: #000;
+    background-color: #fff;
+    opacity: 0.8;
+    width: 110px;
+    height: 500px;
+    text-align: center;
+    line-height: 25px;
+    font-family: "Century Gothic";
+    display: none;
+}
+.selection ul{
+    height: 500px;
+}
+.selection ul li{
+    position: relative;
+    list-style: none;
+    width: 110px;
+    height: 25px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+/* 人口分布的图例 */
+.legend{
+    position: absolute;
+    height: 0px;
+    right: 40px;
+    bottom: 30px;
+    overflow: hidden;
+    z-index:100;
+}
+.legend img{
+    height: 250px;
+}
+
+/* 土层分布说明 */
+.soil-info{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 450px;
+    margin-top: -225px;
+    margin-left: -350px;
+    background-color: #000;
+    opacity: 0.8;
+    z-index: 200;
+    display: block;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.soil-info .add-info{
+    position: absolute;
+    top: 7%;
+    left: 35px;
+    color: #ccc;
+    font-family: "Century Gothic";
+    font-size: 16px;
+}
+.soil-info .pic{
+    border: 2px solid #fff;
+    width: 42%;
+    height: 60%;
+    opacity: 1;
+    margin-top: 11%;
+    margin-left: 35px;
+    /* 长，高 */
+}
+.soil-info .coordinate{
+    position: absolute;
+    top: 82%;
+    left: 35px;
+    color: #ccc;
+    font-family: "Century Gothic";
+    font-size: 15px;
+}
+.soil-info .intro{
+    position: absolute;
+    top: 16%;
+    left: 365px;
+    right: 35px;
+    text-align: justify;
+    color: #ddd;
+    font-family: "Bahnschrift Light";
+    font-size: 14px;
+    line-height: 19px;
+}
+.soil-info img{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 20px;
+    cursor: pointer;
+    display: block;
+}
+.intro .layername{
+    font-size: 15px;
+}
+
+.stoolbar #one {
+    background-image: url(../images/sweather-rain.png);
+}
+.stoolbar #two {
+    background-image: url(../images/sweather-rain.png);
+}
+
+.stoolbar #three {
+    background-image: url(../images/景区.png);
+}
+.stoolbar #four {
+    background-image: url(../images/景区.png);
+}
+
+.stoolbar #five {
+    background-image: url(../images/流域.png);
+}
+.stoolbar #six {
+    background-image: url(../images/流域.png);
+}
+
+.stoolbar #seven {
+    background-image: url(../images/人口分布.png);
+}
+.stoolbar #eight {
+    background-image: url(../images/人口分布.png);
+}
+.stoolbar #nine {
+    background-image: url(../images/土层分布.png);
+}
+.stoolbar #ten {
+    background-image: url(../images/土层分布.png);
+}
+
+.stoolbar #eleven {
+    background-image: url(../images/NDVI.png);
+}
+.stoolbar #twelve {
+    background-image: url(../images/NDVI.png);
+}
+
+.stoolbar #thirteen {
+    background-image: url(../images/笔记.png);
+}
+.stoolbar #fourteen {
+    background-image: url(../images/笔记.png);
+}
+
+.stoolbar ul li:hover {
+    transform: rotateY(-90deg);
+}
+
+.stoolbar ul li:hover div:first-child {
+    background-color: #fff;
+}
+.stoolbar ul li div:first-child {
+    background-color: #fff;
+    transform: translateZ(20px);
+}
+
+.stoolbar ul li div:last-child {
+    background-color: #fff;
+    transform:  translateX(20px) rotateY(90deg);
+}
+.stoolbar input:checked ~ ul {
+    height: 300px;
+}
+
+.stoolbar input:checked ~span:nth-child(2) {
+    top: 21px;
+    transform: rotate(-45deg);
+    background-color: #2c2c2c;
+    transition: top 0.3s ease-in-out,transform 0.3s ease-in-out 0.3s;
+}
+
+.stoolbar input:checked ~span:nth-child(3) {
+    top: 21px;
+    transform: rotate(45deg);
+    background-color: #2c2c2c;
+    transition: top 0.3s ease-in-out,transform 0.3s ease-in-out 0.3s;
+}
